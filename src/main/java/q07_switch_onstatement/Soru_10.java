@@ -5,8 +5,8 @@ public class Soru_10 {
     public static void main(String[] args) {
 
 /*
-        myClass isminde bir class oluşturunuz, class'ta size rastgele bir alfabetik karakter veren bir
-        yöntem oluşturun ve ardından yöntemi kullanarak aşağıdakileri yazdırınız.
+        Size rastgele bir alfabetik karakter veren bir method oluşturun
+        ve olusturdugunuz methodu kullanarak aşağıdakileri yazdırınız.
 
         'A' ve 'a' için "İlk Karakter" yazdırınız.
         'B' ve 'b' için "İkinci Karakter" yazdırınız.
@@ -15,5 +15,30 @@ public class Soru_10 {
          Diğerleri için "Diğer Karakterleri" yazdırınız.
  */
 
+        String alfabe =getRandomAlphabet().toLowerCase();
+        switch(alfabe){
+            case "a":
+                System.out.println("Ilk Karakter");
+                break;
+            case "b":
+                System.out.println("Ikinci Karakter");
+                break;
+            case "c":
+                System.out.println("Ucuncu Karakter");
+                break;
+            case "d":
+                System.out.println("Dorduncu Karakter");
+                break;
+            default:
+                System.out.println("Diger Karakterler");
+        }
+
+    }
+
+    public static String getRandomAlphabet(){
+        String alfabe = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        int maxIndex = alfabe.length()-1;
+        int randomIndex = (int)Math.round(Math.random()*maxIndex);
+        return alfabe.substring(randomIndex, randomIndex+1);
     }
 }
